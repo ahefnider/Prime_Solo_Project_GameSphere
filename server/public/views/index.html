@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>GameSphere</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/styles/somestyle.css" /> -->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/ang-app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/loginController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/userController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/apiController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/libraryController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/randomController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/editController.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-include="'/views/templates/nav.html'"></div>
+    <div id="particles-js"></div>
+    <main ng-view></main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<ol class="breadcrumb">
+<li><a href="#home">Home</a></li>
+<li><a href="#library">Game Library</a></li>
+<li class="active">Edit Game</li>
+</ol>
+
+
+<h1 class="col-md-6 col-md-offset-5">Edit Game</h1>
+
+<div class="container" ng-controller="EditController">
+  <div class="row">
+      <div class="games col-md-6 col-md-offset-3">
+        <div id="gameEdit" ng-repeat="games in games">
+                  <div class="game">
+                    <label for="title">Title: </label>
+                    <input type="text" id="gameTitle" class="form-control" ng-model="games.title" />
+
+                    <label for="gameGenre">Genre: </label>
+                    <select class="genreSelector btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" value="genre" name="genreSelector" ng-model="games.genre" ng-options="game for game in gameGenres">
+                        </select>
+
+                    <label for="gameSystem">System: </label>
+                      <select class="system btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" ng-model="games.system">
+                        <optgroup label="Nintendo">
+                          <option value="Wii U">Wii U</option>
+                          <option value="Wii">Wii</option>
+                          <option value="Nintendo 64">Nintendo 64</option>
+                          <option value="Super Nintendo">Super Nintendo</option>
+                          <option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
+                        <optgroup label="Sony">
+                          <option value="PlayStation 4">PlayStation 4</option>
+                          <option value="PlayStation 3">PlayStation 3</option>
+                          <option value="PlayStation 2">PlayStation 2</option>
+                        <optgroup label="Microsoft">
+                          <option value="Xbox One">Xbox One</option>
+                          <option value="Xbox 360">Xbox 360</option>
+                          <option value="Xbox Original">Xbox Original</option>
+                          <option value="PC (Steam)">PC (Steam)</option>
+                          <option value="PC (Origin)">PC (Origin)</option>
+                      </select>
+
+                    <label for="releaseDate">Release Date: </label>
+                    <input type="date" id="releaseDate" name="releaseDate" ng-model="games.date" />
+
+                    <button class="update btn btn-default btn-sm" ng-click="updateGame(games)">Update</button>
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>

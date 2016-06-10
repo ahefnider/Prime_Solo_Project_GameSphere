@@ -1,0 +1,17 @@
+<ol class="breadcrumb">
+  <li><a href="#home">Home</a></li>
+  <li class="active">Random Game</li>
+</ol>
+
+<h1 class="col-md-6 col-md-offset-5">Random Game</h1>
+  <div class="container" ng-controller="RandomController">
+    <button type="button" class="btn btn-danger" id="randomGame" ng-click="getSingleGame()">Random Game</button>
+    <div class="row">
+        <div class="games col-md-6 col-md-offset-3" ng-show="showRandom()">
+          <h3>{{games.title}}</h3>
+          <p>Genre: <span style="font-weight: bold">{{games.genre}}</span></p>
+          <p>System: <span style="font-weight: bold">{{games.system}}</span></p>
+          <p>Release Date: <span style="font-weight: bold">{{games.date | date : format : longDate}}</span></p>
+        </div>
+      </div>
+    </div>
