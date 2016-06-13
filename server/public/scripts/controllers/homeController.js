@@ -1,7 +1,20 @@
-myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('HomeController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
     $scope.games = [];
     $scope.currentGame = {};
+
+    verifyLogin();
+
+    function verifyLogin() {
+      $http.get('/games').then(function(response) {
+       if (response.data) {
+           $scope.games = response.data;
+       } else {
+           $location.path("/signinhome");
+       }
+     });
+    }
+
 
 // $scope.gameGenres is attached to the genre drop-down
 
@@ -39,19 +52,13 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
       $http.post('/games', data)
         .then(function () {
           alert('Game has been saved.');
+          $scope.lastGame = $scope.currentGame;
+          console.log($scope.games[$scope.games.length-1], "inside submitCurrentGame");
           console.log('POST /games');
           $scope.currentGame = {};
         });
     };
   }]);
-
-
-
-
-
-
-
-
 
 
   // $scope.gameGenres = [

@@ -13,6 +13,7 @@ myApp.controller('UserController', ['$scope', '$http', '$window', '$location', f
   $scope.logout = function() {
     $http.get('/user/logout').then(function(response) {
       console.log('logged out');
+      alert("You have been logged out.");
       $location.path("/signinhome");
     });
   }

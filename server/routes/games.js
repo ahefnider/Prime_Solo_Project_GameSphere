@@ -9,11 +9,9 @@ router.get('/', function (req, res) {
       Game.find({user: req.user.username}, function (err, games) {
     res.send(games);
   });
-
 } else {
   // failure best handled on the server. do redirect here.
   console.log('not logged in');
-  // res.sendFile(path.join(__dirname, '../public/views/index.html'));
   res.send(false);
 }
 });

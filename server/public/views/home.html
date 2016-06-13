@@ -1,102 +1,54 @@
-
+<div class="jumbotron">
+  <h1>GameSphere</h1>
+  </div>
 <ol class="breadcrumb">
 <li class="active">Home</li>
 </ol>
-<div class="jumbotron">
-  <h1>GameSphere</h1>
-</div>
-<h2 class="col-md-12 col-md-offset-4">Add a Game</h2>
-  <div class="container games col-md-5 col-md-offset-3" ng-controller="HomeController">
-  <form class="addGame">
+<h1 class="addGameHeader">Add a Game</h1>
+  <div class="container homeGame" ng-controller="HomeController">
+    <form class="addGame">
 
-    <label for="gameName">Title</label>
-    <input type="text" id="gameName" name="gameName" class="form-control" ng-model="currentGame.title"/>
+      <label for="gameName">Title</label>
+      <input type="text" name="gameName" class="form-control gameName" ng-model="currentGame.title"/>
 
-    <label for="gameSystem">System</label>
-      <select class="system btn btn-default btn-lg dropdown-toggle" ng-model="currentGame.system">
-        <optgroup label="Nintendo">
-          <option value="Wii U">Wii U</option>
-          <option value="Wii">Wii</option>
-          <option value="Nintendo 64">Nintendo 64</option>
-          <option value="Super Nintendo">Super Nintendo</option>
-          <option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
-        <optgroup label="Sony">
-          <option value="PlayStation 4">PlayStation 4</option>
-          <option value="PlayStation 3">PlayStation 3</option>
-          <option value="PlayStation 2">PlayStation 2</option>
-        <optgroup label="Microsoft">
-          <option value="Xbox One">Xbox One</option>
-          <option value="Xbox 360">Xbox 360</option>
-          <option value="Xbox Original">Xbox Original</option>
-          <option value="PC (Steam)">PC (Steam)</option>
-          <option value="PC (Origin)">PC (Origin)</option>
-      </select>
 
-      <label for="gameRelease">Release Date</label>
-      <input type="date" id="releaseDate" name="releaseDate" ng-model="currentGame.date" />
+      <label for="genreSelector">Genre</label>
+      <select class="genreSelector btn btn-default btn-lg dropdown-toggle form-control" data-toggle="dropdown"
+      value="genre" name="genreSelector" ng-model="currentGame.genre" ng-options="game for game in gameGenres">
+        </select>
 
-      <select class="genreSelector btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" value="genre" name="genreSelector" ng-model="currentGame.genre" ng-options="game for game in gameGenres">
+      <label for="gameSystem">System</label>
+        <select class="system btn btn-default btn-lg dropdown-toggle form-control" ng-model="currentGame.system">
+          <optgroup label="Nintendo">
+            <option value="Wii U">Wii U</option>
+            <option value="Wii">Wii</option>
+            <option value="Nintendo 64">Nintendo 64</option>
+            <option value="Super Nintendo">Super Nintendo</option>
+            <option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
+          <optgroup label="Sony">
+            <option value="PlayStation 4">PlayStation 4</option>
+            <option value="PlayStation 3">PlayStation 3</option>
+            <option value="PlayStation 2">PlayStation 2</option>
+          <optgroup label="Microsoft">
+            <option value="Xbox One">Xbox One</option>
+            <option value="Xbox 360">Xbox 360</option>
+            <option value="Xbox Original">Xbox Original</option>
+            <option value="PC (Steam)">PC (Steam)</option>
+            <option value="PC (Origin)">PC (Origin)</option>
           </select>
 
-    <button id="task-submit" class="save btn btn-info btn-sm" ng-click="submitCurrentGame()">Save Game</button>
-  </form>
-</div>
+          <label for="gameRelease">Release Date</label>
+          <input type="date" class="form-control releaseDate" name="releaseDate" ng-model="currentGame.date" />
 
+            <button id="task-submit" class="save btn btn-info btn-sm" ng-click="submitCurrentGame()">Save Game</button>
+          </form>
+        </div>
 
+        <div class="recentlyAdded">
+          <h3 class="recentlyAddedTitle">Last Game Added</h3>
+          <h4>{{games[games.length-1].title}}</h4>
+          <p>Genre: <span style="font-weight: bold">{{games[games.length-1].genre}}</span></p>
+          <p>System: <span style="font-weight: bold">{{games[games.length-1].system}}</span></p>
+          <p>Release Date: <span style="font-weight: bold">{{games[games.length-1].date | date : format : longDate}}</span></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <label for="gameAge">Release Date</label>
-  <select class="age">
-    <option value="new">New (0-2 years)</option>
-    <option value="recent">Recent (3-5 years)</option>
-    <option value="dated">Dated (6-10 years)</option>
-    <option value="semiretro">Semi-Retro (11-16 years)</option>
-    <option value="retro">Retro (17-23 years)</option>
-    <option value="retroplus">Retro+ (24+ years)</option>
-  </select> -->
-
-
-
-
-
-
-
-  <!-- <label for="gameGenre">Main Genre</label>
-    <select class="genre" ng-model="currentGame.genre">
-      <option value="Adventure">Adventure</option>
-      <option value="Fantasy">Fantasy</option>
-      <option value="Fighting">Fighting</option>
-      <option value="Horror">Horror</option>
-      <option value="Logic">Logic</option>
-      <option value="Management">Management</option>
-      <option value="MMORPG">MMORPG</option>
-      <option value="Platformer">Platformer</option>
-      <option value="Racing">Racing</option>
-      <option value="Retro">Retro</option>
-      <option value="RPG">RPG</option>
-      <option value="RTS">RTS</option>
-      <option value="Roguelike">Roguelike</option>
-      <option value="Sandbox">Sandbox</option>
-      <option value="Shooter">Shooter</option>
-      <option value="Simulation">Simulation</option>
-      <option value="Sports">Sports</option>
-      <option value="Stealth">Stealth</option>
-      <option value="Strategy">Strategy</option>
-      <option value="Strategy-4X">Strategy 4X</option>
-      <option value="Survival">Survival</option>
-    </select> -->
+        </div>

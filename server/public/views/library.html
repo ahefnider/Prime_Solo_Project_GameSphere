@@ -1,15 +1,21 @@
+<div class="jumbotron">
+    <h1 class="homeTitle">GameSphere</h1>
+  </div>
+
 <ol class="breadcrumb">
 <li><a href="#home">Home</a></li>
 <li class="active">Game Library</li>
 </ol>
 
-<h1 class="col-md-6 col-md-offset-5"><u>Game Library</u></h1>
-<div class="container" ng-controller="LibraryController">
+<h1 class="gameLibraryHeader">Game Library</h1>
+<div class="container libraryContainer" ng-controller="LibraryController">
   <div class="row">
-  <label>Search: <input ng-model="searchText" class="form-control" placeholder="Title, Genre, or System" /></label>
-  <button id="editGame" class="btn btn-info btn-sm" ng-click="editGame()">Edit Games</button>
-  <div class="row " ng-repeat="games in games | filter : searchText">
-    <div class="games col-md-6 col-md-offset-3">
+
+  <button class="btn btn-primary btn-sm editGame" ng-click="editGame()">Edit Games</button>
+  <input ng-model="searchText" class="form-control librarySearch" placeholder="Search by Title, Genre, or System" />
+
+  <div class="row rowGames" ng-repeat="games in games | filter : searchText">
+    <div class="libraryGames">
       <h3>{{games.title}}</h3>
       <p>Genre: <span style="font-weight: bold">{{games.genre}}</span></p>
       <p>System: <span style="font-weight: bold">{{games.system}}</span></p>

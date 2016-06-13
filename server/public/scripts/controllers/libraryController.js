@@ -3,18 +3,34 @@ myApp.controller('LibraryController', ['$scope', '$http', '$location', function(
     $scope.games = [];
     $scope.currentGame = {};
 
-    getGames();
+    // getGames();
+    verifyLogin()
 
-// getGames grabs the games from the database and assigns it to the array of $scope.games.
 
-    function getGames() {
-      $http.get('/games')
-        .then(function (response) {
-          $scope.games = response.data;
-        });
+// verifyLogin makes sure user is authenticated, if they are, get the games, if not, redirect to login page.
+
+     function verifyLogin() {
+      $http.get('/games').then(function(response) {
+       if (response.data) {
+         $scope.games = response.data;
+       } else {
+           $location.path("/signinhome");
+       }
+     });
     }
 
-// editGame is not functional at the moment. Might move to its own page.
+
+
+// getGames grabs the games from the database and assigns it to the array of $scope.games. REPLACED, by verifyLogin().
+
+    // function getGames() {
+    //   $http.get('/games')
+    //     .then(function (response) {
+    //       $scope.games = response.data;
+    //     })
+    // }
+
+// editGame opens up the game editing html to edit all games.
 
     $scope.editGame = function () {
         $location.path( '/edit' );
@@ -27,7 +43,7 @@ myApp.controller('LibraryController', ['$scope', '$http', '$location', function(
         $http.delete('/games/' + id)
           .then(function (response) {
             console.log('DELETE /games ', id);
-              getGames();
+              verifyLogin();
             });
           }
         };

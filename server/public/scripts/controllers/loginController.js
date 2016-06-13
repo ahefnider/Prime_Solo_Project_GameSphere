@@ -7,7 +7,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
 
     $scope.login = function() {
       if($scope.user.username == '' || $scope.user.password == '') {
-        $scope.message = "Enter your username and password!";
+        $scope.message = "Enter your Username and Password!";
       } else {
         console.log('sending to server...');
         $http.post('/', $scope.user).then(function(response) {
@@ -17,7 +17,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
             $location.path('/user');
           } else {
             console.log('failure: ', response);
-            $scope.message = "Wrong!!";
+            $scope.message = "Please try again.";
           }
         });
       }
@@ -25,7 +25,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
 
     $scope.registerUser = function() {
       if($scope.user.username == '' || $scope.user.password == '') {
-        $scope.message = "Choose a username and password!";
+        $scope.message = "Choose a Username and Password!";
       } else {
         console.log('sending to server...', $scope.user);
         $http.post('/register', $scope.user).then(function(response) {

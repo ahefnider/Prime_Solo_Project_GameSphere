@@ -1,0 +1,268 @@
+
+
+
+
+
+/*---------------------------------all pages---------------------------------*/
+
+.navButtons {
+  color: black;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover{
+  text-decoration: underline;
+  background-color: rgb(223,150,148);
+}
+
+.navButtons:hover {
+  color: black;
+}
+
+.navButtons:focus {
+  color: black;
+}
+
+.navbar {
+  border-radius: 0px;
+  background-color: rgb(89,34,33);
+  padding-bottom: 10px;
+  border: 0px;
+  margin: 0px;
+}
+
+.navButtons:active {
+  color: black;
+  font-weight: bold;
+}
+
+.breadcrumb {
+  background-color: rgb(217,83,79);
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.jumbotron {
+  /*background-color: rgb(89,34,33);*/
+  background: linear-gradient(rgb(89,34,33), rgb(217,83,79));
+  color: rgb(217,83,79);
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 20px;
+  margin-top: -20px;
+  margin-bottom: -10px;
+  font-family: Impact;
+  -webkit-text-stroke: 2px black;
+}
+
+.active {
+  color: white !important;
+}
+
+body {
+  /*background-color: rgb(89,34,33);*/
+  background-color: rgb(165,112,111);
+}
+
+
+
+/*---------------------------------user page---------------------------------*/
+
+.loginHeader{
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.registerHeader {
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.welcome {
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.logInForm {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  width: 300px;
+  height: 130px;
+  border: 1px solid black;    /*------------------------------remove*/
+}
+
+.registerUserPage {
+  text-align: center;
+}
+
+.registerUserForm {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  width: 300px;
+  height: 130px;
+  border: 1px solid black;    /*------------------------------remove*/
+}
+
+.usernameField, .passwordField {
+  padding-bottom: 10px;
+}
+
+
+.userPage, .signIn {
+  text-align: center;
+}
+
+
+
+
+
+/*---------------------------------home page---------------------------------*/
+
+.homeGame {
+  align-content: center;
+  width: 600px;
+  height: 400px;
+  /*border: 1px solid black;    /*------------------------------remove*/
+}
+
+.addGameHeader {
+  text-align: center;
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.gameName {
+  margin-bottom: 30px;
+}
+
+.system {
+  margin-bottom: 30px;
+}
+
+.releaseDate {
+  margin-bottom: 30px;
+}
+
+.genreSelector {
+  margin-bottom: 30px;
+}
+
+.recentlyAddedTitle {
+  text-decoration: underline;
+}
+
+.recentlyAdded {
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+
+/*---------------------------------library page---------------------------------*/
+
+.gameLibraryHeader {
+  text-align: center;
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.editGame {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.librarySearch {
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.libraryGames {
+  margin-left:auto;
+  margin-right:auto;
+  width: 300px;
+  height: auto;
+  border: 1px solid black;    /*------------------------------remove*/
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: lightgrey;
+}
+
+
+
+
+/*---------------------------------edit page---------------------------------*/
+
+.editGameHeader {
+  font-family: Impact;
+  color: rgb(217,83,79);
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+}
+
+.gamesToEdit {
+  width: 600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.gameEditField {
+  border: 1px solid black;    /*------------------------------remove*/
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  background-color: rgb(217,83,79);
+}
+
+.updateButton {
+  margin-bottom: 30px;
+}
+
+
+
+
+/*---------------------------------random page---------------------------------*/
+
+.randomHeader {
+  text-align: center;
+  font-family: Impact;
+  color: rgb(217,83,79);
+  -webkit-text-stroke: 1px black;
+}
+
+.randomGameButton {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+.randomPage {
+  text-align: center;
+}
+
+.randomGame {
+  margin-top: 50px;
+  border: 1px solid black;        /*------------------------------remove*/
+  width: 300px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}

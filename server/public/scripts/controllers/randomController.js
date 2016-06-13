@@ -1,5 +1,24 @@
-myApp.controller('RandomController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('RandomController', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.games = [];
+
+
+  verifyLogin();
+
+
+  function verifyLogin() {
+   $http.get('/games').then(function(response) {
+    if (response.data) {
+      console.log(response.data);
+        $scope.userName = response.data.username;
+    } else {
+        $location.path("/signinhome");
+    }
+  });
+ }
+
+
+
+
 
 // getSingleGame function chooses a random game and assigns it to $scope.games. Which shows up on the DOM.
 
