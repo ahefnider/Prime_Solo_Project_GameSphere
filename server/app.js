@@ -48,7 +48,7 @@ app.use('/*', index);
 
 
 // mongoose connection
-var databaseURI = 'mongodb://localhost:27017/mu';
+var databaseURI = 'mongodb://localhost:27017/GameSphere';
 
 mongoose.connect(databaseURI);
 

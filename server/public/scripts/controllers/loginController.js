@@ -12,7 +12,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
         console.log('sending to server...');
         $http.post('/', $scope.user).then(function(response) {
           if(response.data.username) {
-            console.log('success: ', response.data);
+            console.log('success');
             // location works with SPA (ng-route)
             $location.path('/user');
           } else {
@@ -27,7 +27,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       if($scope.user.username == '' || $scope.user.password == '') {
         $scope.message = "Choose a Username and Password!";
       } else {
-        console.log('sending to server...', $scope.user);
+        console.log('sending to server...');
         $http.post('/register', $scope.user).then(function(response) {
           console.log('success');
           $location.path('/signinhome');
