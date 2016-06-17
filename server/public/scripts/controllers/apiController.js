@@ -3,7 +3,7 @@
 
 myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
   var key = 'cda6e4452910c4bd62fec694b9699db14588146d';
-  var baseURL = 'http://www.giantbomb.com/api/search/?api_key=';
+  var baseURL = 'https://www.giantbomb.com/api/search/?api_key=';
 
   $scope.getApiGame = function(wantedGame) {
     var query = key;
