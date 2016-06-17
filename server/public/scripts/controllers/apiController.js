@@ -3,7 +3,7 @@
 
 myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
   var key = 'cda6e4452910c4bd62fec694b9699db14588146d';
-  var baseURL = 'https://www.giantbomb.com/api/search/?api_key=';
+  var baseURL = 'http://www.giantbomb.com/api/search/?api_key=';
 
   $scope.getApiGame = function(wantedGame) {
     var query = key;
@@ -24,15 +24,21 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
             format: 'jsonp',
             json_callback: 'JSON_CALLBACK'
         }
-        // "https://static.giantbomb.com" +
+
     }).then(function (data) {
         $scope.data = data;
         $scope.link = $scope.data.data.results[0].site_detail_url;
         $scope.name = $scope.data.data.results[0].name;
-        $scope.apiImage = $scope.data.data.results[0].image.thumb_url;
         var apiReleaseDate = $scope.data.data.results[0].original_release_date;
         $scope.apiReleaseDate = new Date(apiReleaseDate);
         $scope.apiDeck = $scope.data.data.results[0].deck;
+
+        $scope.apiImage = "https://static.giantbomb.com" + $scope.data.data.results[0].image.thumb_url;
+
+        // if ()
+
+
+
         console.log($scope.data.data.results[0]);
     });
 }
