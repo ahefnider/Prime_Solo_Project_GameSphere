@@ -48,7 +48,8 @@ app.use('/*', index);
 
 
 // mongoose connection
-var databaseURI = 'mongodb://localhost:27017/GameSphere';
+// var databaseURI = 'mongodb://localhost:27017/GameSphere';
+var databaseURI = 'mongodb://ahefnider:Kcee8636$@ds017544.mlab.com:17544/heroku_psnhj9wn';
 
 mongoose.connect(databaseURI);
 
