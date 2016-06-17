@@ -33,7 +33,7 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
         $scope.apiReleaseDate = new Date(apiReleaseDate);
         $scope.apiDeck = $scope.data.data.results[0].deck;
 
-        $scope.apiImage = "https://static.giantbomb.com" + $scope.data.data.results[0].image.thumb_url;
+        $scope.apiImage = "http://static.giantbomb.com" + $scope.data.data.results[0].image.thumb_url;
 
         // if ()
 
