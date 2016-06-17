@@ -8,10 +8,11 @@
 </ol>
 
 <h1 class="gameLibraryHeader">Game Library</h1>
-<div class="container libraryContainer" ng-controller="LibraryController">
+<div class="container libraryContainer">
   <div class="row">
 
   <button class="btn btn-primary btn-sm editGame" ng-click="editGame()">Edit Games</button>
+  <h3 class="libraryCount"><span style="font-weight: bold">{{games.length}}</span> Total Games</h3>
   <input ng-model="searchText" class="form-control librarySearch" placeholder="Search by Title, Genre, or System" />
 
   <div class="row rowGames" ng-repeat="games in games | filter : searchText">
@@ -25,8 +26,3 @@
   </div>
   </div>
 </div>
-<!-- <div class="api" ng-controller="APIController">
-  <button ng-click="getApiGame()">Show</button>
-    <h2>{{genres}}</h2>
-    <p>{{animal.description.$t}}</p>
-</div> -->

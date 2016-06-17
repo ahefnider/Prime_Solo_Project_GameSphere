@@ -2,6 +2,7 @@ myApp.controller('HomeController', ['$scope', '$http', '$location', function($sc
 
     $scope.games = [];
     $scope.currentGame = {};
+    $scope.lastGame = {};
 
     verifyLogin();
 
@@ -9,11 +10,25 @@ myApp.controller('HomeController', ['$scope', '$http', '$location', function($sc
       $http.get('/games').then(function(response) {
        if (response.data) {
            $scope.games = response.data;
+           console.log($scope.games[$scope.games.length-1]);
+           $scope.lastGame = $scope.games[$scope.games.length-1];
+          //  console.log($scope.lastGame);
        } else {
            $location.path("/signinhome");
        }
      });
     }
+
+
+    $scope.showLastGame = function () {
+      if ($scope.lastGame == {}) {
+        return false;
+      }else if ($scope.lastGame == undefined) {
+        return false;
+      } else {
+        return true;
+      }
+    };
 
 
 // $scope.gameGenres is attached to the genre drop-down
@@ -52,36 +67,11 @@ myApp.controller('HomeController', ['$scope', '$http', '$location', function($sc
       $http.post('/games', data)
         .then(function () {
           alert('Game has been saved.');
-          $scope.lastGame = $scope.currentGame;
-          console.log($scope.games[$scope.games.length-1], "inside submitCurrentGame");
-          console.log('POST /games');
+          $scope.lastGame = data;
+          console.log($scope.lastGame);
           $scope.currentGame = {};
+
         });
+
     };
   }]);
-
-
-  // $scope.gameGenres = [
-  //     {type: 'action', label: 'Action'},
-  //     {type: 'adventure', label: 'Adventure'},
-  //     {type: 'fantasy', label: 'Fantasy'},
-  //     {type: 'fighting', label: 'Fighting'},
-  //     {type: 'horror', label: 'Horror'},
-  //     {type: 'logic', label: 'Logic'},
-  //     {type: 'management', label: 'Management'},
-  //     {type: 'mmorpg', label: 'MMORPG'},
-  //     {type: 'platformer', label: 'Platformer'},
-  //     {type: 'racing', label: 'Racing'},
-  //     {type: 'retro', label: 'Retro'},
-  //     {type: 'rpg', label: 'RPG'},
-  //     {type: 'rts', label: 'RTS'},
-  //     {type: 'roguelike', label: 'Roguelike'},
-  //     {type: 'sandbox', label: 'Sandbox'},
-  //     {type: 'shooter', label: 'Shooter'},
-  //     {type: 'simulation', label: 'Simulation'},
-  //     {type: 'sports', label: 'Sports'},
-  //     {type: 'stealth', label: 'Stealth'},
-  //     {type: 'strategy', label: 'Strategy'},
-  //     {type: 'strategy4X', label: 'Strategy 4X'},
-  //     {type: 'survival', label: 'Survival'},
-  //   ];

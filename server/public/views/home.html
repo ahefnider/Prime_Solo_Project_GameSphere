@@ -5,7 +5,25 @@
 <li class="active">Home</li>
 </ol>
 <h1 class="addGameHeader">Add a Game</h1>
-  <div class="container homeGame" ng-controller="HomeController">
+
+
+<div class="allHomePage">
+<div class="api" ng-controller="APIController">
+  <form>
+  <input ng-model="searchGame" class="form-control giantBombSearch" placeholder="Search game data" />
+  <button class="giantBombSearchButton btn btn-danger btn-sm" ng-click="getApiGame(searchGame)">Search</button>
+  </form>
+  <div class="giantBombData" ng-show="showApiData()">
+    <p>Click image</p>
+    <a target="_blank" href="{{link}}"><img class="giantBombDataImage" src="{{apiImage}}"/></a>
+    <p>Title: <span style="font-weight: bold" class="lead">{{name}}</span></p>
+    <p>Release Date: <span style="font-weight: bold">{{apiReleaseDate | date : format : longDate}}</span></p>
+    <p>Description: <span style="font-weight: bold">{{apiDeck}}</span></p>
+  </div>
+
+</div>
+
+  <div class="container homeGame">
     <form class="addGame">
 
       <label for="gameName">Title</label>
@@ -40,15 +58,17 @@
           <label for="gameRelease">Release Date</label>
           <input type="date" class="form-control releaseDate" name="releaseDate" ng-model="currentGame.date" />
 
-            <button id="task-submit" class="save btn btn-info btn-sm" ng-click="submitCurrentGame()">Save Game</button>
+            <button class="saveGame btn btn-danger btn-sm" ng-click="submitCurrentGame()">Save Game</button>
           </form>
         </div>
 
-        <div class="recentlyAdded">
+        <div class="allLastAdded">
           <h3 class="recentlyAddedTitle">Last Game Added</h3>
-          <h4>{{games[games.length-1].title}}</h4>
-          <p>Genre: <span style="font-weight: bold">{{games[games.length-1].genre}}</span></p>
-          <p>System: <span style="font-weight: bold">{{games[games.length-1].system}}</span></p>
-          <p>Release Date: <span style="font-weight: bold">{{games[games.length-1].date | date : format : longDate}}</span></p>
-
+          <div class="recentlyAdded">
+            <h4>{{lastGame.title}}</h4>
+            <p>Genre: <span style="font-weight: bold">{{lastGame.genre}}</span></p>
+            <p>System: <span style="font-weight: bold">{{lastGame.system}}</span></p>
+            <p>Release Date: <span style="font-weight: bold">{{lastGame.date | date : format : longDate}}</span></p>
+          </div>
         </div>
+</div>

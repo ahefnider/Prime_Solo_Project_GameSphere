@@ -25,9 +25,13 @@ myApp.controller('RandomController', ['$scope', '$http', '$location', function($
    $scope.getSingleGame = function () {
     $http.get('/games')
       .then(function (response) {
-        $scope.games = response.data[Math.floor(Math.random()*response.data.length)];
-        console.log('GET Random Game: ', $scope.games);
-        console.log(response.data.length, 'games in library');
+        if (response.data.length == 0) {
+          alert("No games in Library");  
+        } else {
+          $scope.games = response.data[Math.floor(Math.random()*response.data.length)];
+          console.log('GET Random Game: ', $scope.games);
+          console.log(response.data.length, 'games in library');
+        }
       });
     }
 
