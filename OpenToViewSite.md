@@ -8,5 +8,5 @@ Enter all your games from various systems into the library. Use the Giant Bomb A
 select a game from your library. This is to encourage you to play games you would otherwise ignore or games you 
 may have forgotten about. 
 
-# Feel free to register as a new user to explore the features. You will need to have a few games entered in to use 
-certain features. 
+# Feel free to register as a new user to explore the features. You will need to have a few games entered in to use certain features. 
+
