@@ -1,4 +1,5 @@
-# Prime_Solo_Project_GameSphere (Currently Built For Google Chrome - More Browser Compatibility Coming Soon)
+# Prime Academy - Solo Project - GameSphere 
+###(Currently Built For Google Chrome - More Browser Compatibility Coming Soon)
 
 # Click to view program: https://stormy-lake-98292.herokuapp.com/#/signinhome
 # Feel free to register as a new user to explore the features. You will need to have a few games entered in to use certain features. 
