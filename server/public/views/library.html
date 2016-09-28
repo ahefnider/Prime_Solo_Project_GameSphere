@@ -1,31 +1,31 @@
 <div class="jumbotron">
     <h1 class="homeTitle">GameSphere</h1>
-  </div>
+</div>
 
 <ol class="breadcrumb">
-<li><a href="#home">Home</a></li>
-<li class="active">Game Library</li>
+    <li><a href="#home">Home</a></li>
+    <li class="active">Game Library</li>
 </ol>
 
 <h1 class="gameLibraryHeader">Game Library</h1>
 <div class="container libraryContainer">
-  <div class="row">
+    <div class="row">
 
-  <button class="btn btn-primary btn-sm editGame" ng-click="editGame()">Edit Games</button>
-  <h3 class="libraryCount"><span style="font-weight: bold">{{games.length}}</span> Total Games</h3>
-  <input ng-model="searchText" class="form-control librarySearch" placeholder="Search by Title, Genre, or System" />
+        <button class="btn btn-primary btn-sm editGame" ng-click="editGame()">Edit Games</button>
+        <h3 class="libraryCount"><span style="font-weight: bold">{{games.length}}</span> Total Games</h3>
+        <input ng-model="searchText" class="form-control librarySearch" placeholder="Search by Title, Genre, or System" />
 
-  <div class="row rowGames" ng-repeat="games in games | filter : searchText">
-    <div class="libraryGames">
-      <h3>{{games.title}}</h3>
-      <p>Genre: <span style="font-weight: bold">{{games.genre}}</span></p>
-      <p>System: <span style="font-weight: bold">{{games.system}}</span></p>
-      <p>Release Date: <span style="font-weight: bold">{{games.date | date : format : longDate}}</span></p>
-      <button id="deleteGame" class="btn btn-danger btn-sm" ng-click="deleteConfirm(); deleteGame(games._id)">Remove Game</button>
-    </div>
-  </div>
+        <div class="row rowGames" ng-repeat="games in games | filter : searchText">
+            <div class="libraryGames">
+                <h3>{{games.title}}</h3>
+                <p>Genre: <span style="font-weight: bold">{{games.genre}}</span></p>
+                <p>System: <span style="font-weight: bold">{{games.system}}</span></p>
+                <p>Release Date: <span style="font-weight: bold">{{games.date | date : format : longDate}}</span></p>
+                <button id="deleteGame" class="btn btn-danger btn-sm" ng-click="deleteConfirm(); deleteGame(games._id)">Remove Game</button>
+            </div>
+        </div>
 
-  <!-- <table>
+        <!-- <table>
   <tr ng-repeat="games in games | filter : searchText">
     <td>{{games.title}}</td>
     <td>{{games.genre}}</td>
@@ -33,5 +33,5 @@
     <td>{{games.date | date : format : longDate}}</td>
   </tr>
 </table> -->
-  </div>
+    </div>
 </div>
