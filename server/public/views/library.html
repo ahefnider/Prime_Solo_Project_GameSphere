@@ -24,5 +24,14 @@
       <button id="deleteGame" class="btn btn-danger btn-sm" ng-click="deleteConfirm(); deleteGame(games._id)">Remove Game</button>
     </div>
   </div>
+
+  <!-- <table>
+  <tr ng-repeat="games in games | filter : searchText">
+    <td>{{games.title}}</td>
+    <td>{{games.genre}}</td>
+    <td>{{games.system}}</td>
+    <td>{{games.date | date : format : longDate}}</td>
+  </tr>
+</table> -->
   </div>
 </div>

@@ -33,9 +33,13 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
         $scope.apiReleaseDate = new Date(apiReleaseDate);
         $scope.apiDeck = $scope.data.data.results[0].deck;
 
-        $scope.apiImage = "http://static.giantbomb.com" + $scope.data.data.results[0].image.thumb_url;
 
-        // if ()
+        // ********** THIS IS ME TRYING TO FIGURE OUT WHY IMAGES DON'T SHOW UP WHEN ON HEROKU *********
+
+
+        // $scope.apiImage = "http://static.giantbomb.com" + $scope.data.data.results[0].image.thumb_url;
+        $scope.apiImage = $scope.data.data.results[0].image.thumb_url;
+        // $scope.apiImage = $scope.data.data.results[0].image.thumb_url;
 
 
 
