@@ -1,8 +1,4 @@
 
-
-
-
-
 /*---------------------------------nav bar---------------------------------*/
 
 .navButtons {
@@ -197,7 +193,9 @@ body {
   background-color: lightgrey;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-left:auto;
   margin-right:auto;
   display: block;

@@ -1,74 +1,73 @@
 <div class="jumbotron">
-  <h1>GameSphere</h1>
-  </div>
+    <h1>GameSphere</h1>
+</div>
 <ol class="breadcrumb">
-<li class="active">Home</li>
+    <li class="active">Home</li>
 </ol>
 <h1 class="addGameHeader">Add a Game</h1>
 
 
 <div class="allHomePage">
-<div class="api" ng-controller="APIController">
-  <form>
-  <input ng-model="searchGame" class="form-control giantBombSearch" placeholder="Search game data" />
-  <button class="giantBombSearchButton btn btn-danger btn-sm" ng-click="getApiGame(searchGame)">Search</button>
-  </form>
-  <div class="giantBombData" ng-show="showApiData()">
-    <p>Click image</p>
-    <a target="_blank" href="{{link}}"><img class="giantBombDataImage" src="{{apiImage}}"/></a>
-    <p>Title: <span style="font-weight: bold" class="lead">{{name}}</span></p>
-    <p>Release Date: <span style="font-weight: bold">{{apiReleaseDate | date : format : longDate}}</span></p>
-    <p>Description: <span style="font-weight: bold">{{apiDeck}}</span></p>
-  </div>
-
-</div>
-
-  <div class="container homeGame">
-    <form class="addGame">
-
-      <label for="gameName">Title</label>
-      <input type="text" name="gameName" class="form-control gameName" ng-model="currentGame.title"/>
-
-
-      <label for="genreSelector">Genre</label>
-      <select class="genreSelector btn btn-default btn-lg dropdown-toggle form-control" data-toggle="dropdown"
-      value="genre" name="genreSelector" ng-model="currentGame.genre" ng-options="game for game in gameGenres">
-        </select>
-
-      <label for="gameSystem">System</label>
-        <select class="system btn btn-default btn-lg dropdown-toggle form-control" ng-model="currentGame.system">
-          <optgroup label="Nintendo">
-            <option value="Wii U">Wii U</option>
-            <option value="Wii">Wii</option>
-            <option value="Nintendo 64">Nintendo 64</option>
-            <option value="Super Nintendo">Super Nintendo</option>
-            <option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
-          <optgroup label="Sony">
-            <option value="PlayStation 4">PlayStation 4</option>
-            <option value="PlayStation 3">PlayStation 3</option>
-            <option value="PlayStation 2">PlayStation 2</option>
-          <optgroup label="Microsoft">
-            <option value="Xbox One">Xbox One</option>
-            <option value="Xbox 360">Xbox 360</option>
-            <option value="Xbox Original">Xbox Original</option>
-            <option value="PC (Steam)">PC (Steam)</option>
-            <option value="PC (Origin)">PC (Origin)</option>
-          </select>
-
-          <label for="gameRelease">Release Date</label>
-          <input type="date" class="form-control releaseDate" name="releaseDate" ng-model="currentGame.date" />
-
-            <button class="saveGame btn btn-danger btn-sm" ng-click="submitCurrentGame()">Save Game</button>
-          </form>
+    <div class="api" ng-controller="APIController">
+        <form>
+            <input ng-model="searchGame" class="form-control giantBombSearch" placeholder="Search game data" />
+            <button class="giantBombSearchButton btn btn-danger btn-sm" ng-click="getApiGame(searchGame)">Search</button>
+        </form>
+        <div class="giantBombData" ng-show="showApiData()">
+            <p>Click image</p>
+            <a target="_blank" href="{{link}}"><img class="giantBombDataImage" src="{{apiImage}}" /></a>
+            <p>Title: <span style="font-weight: bold" class="lead">{{name}}</span></p>
+            <p>Release Date: <span style="font-weight: bold">{{apiReleaseDate | date : format : longDate}}</span></p>
+            <p>Description: <span style="font-weight: bold">{{apiDeck}}</span></p>
         </div>
 
-        <div class="allLastAdded">
-          <h3 class="recentlyAddedTitle">Last Game Added</h3>
-          <div class="recentlyAdded">
+    </div>
+
+    <div class="container homeGame">
+        <form class="addGame">
+
+            <label for="gameName">Title</label>
+            <input type="text" name="gameName" class="form-control gameName" ng-model="currentGame.title" />
+
+
+            <label for="genreSelector">Genre</label>
+            <select class="genreSelector btn btn-default btn-lg dropdown-toggle form-control" data-toggle="dropdown" value="genre" name="genreSelector" ng-model="currentGame.genre" ng-options="game for game in gameGenres">
+            </select>
+
+            <label for="gameSystem">System</label>
+            <select class="system btn btn-default btn-lg dropdown-toggle form-control" ng-model="currentGame.system">
+                <optgroup label="Nintendo">
+                    <option value="Wii U">Wii U</option>
+                    <option value="Wii">Wii</option>
+                    <option value="Nintendo 64">Nintendo 64</option>
+                    <option value="Super Nintendo">Super Nintendo</option>
+                    <option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
+                    <optgroup label="Sony">
+                        <option value="PlayStation 4">PlayStation 4</option>
+                        <option value="PlayStation 3">PlayStation 3</option>
+                        <option value="PlayStation 2">PlayStation 2</option>
+                        <optgroup label="Microsoft">
+                            <option value="Xbox One">Xbox One</option>
+                            <option value="Xbox 360">Xbox 360</option>
+                            <option value="Xbox Original">Xbox Original</option>
+                            <option value="PC (Steam)">PC (Steam)</option>
+                            <option value="PC (Origin)">PC (Origin)</option>
+            </select>
+
+            <label for="gameRelease">Release Date</label>
+            <input type="date" class="form-control releaseDate" name="releaseDate" ng-model="currentGame.date" />
+
+            <button class="saveGame btn btn-danger btn-sm" ng-click="submitCurrentGame()">Save Game</button>
+        </form>
+    </div>
+
+    <div class="allLastAdded">
+        <h3 class="recentlyAddedTitle">Last Game Added</h3>
+        <div class="recentlyAdded">
             <h4>{{lastGame.title}}</h4>
             <p>Genre: <span style="font-weight: bold">{{lastGame.genre}}</span></p>
             <p>System: <span style="font-weight: bold">{{lastGame.system}}</span></p>
             <p>Release Date: <span style="font-weight: bold">{{lastGame.date | date : format : longDate}}</span></p>
-          </div>
         </div>
+    </div>
 </div>
